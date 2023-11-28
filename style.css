@@ -11,3 +11,15 @@ text-align: center;
   justify-content: center;
   margin: 30 px auto;
 }
+
+/* Card opacity before clicking */
+
+.card {
+  background-color: #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card .card-content {
+  opacity: 0;
+}
