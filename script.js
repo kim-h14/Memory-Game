@@ -51,7 +51,6 @@ function onCardClick(e){
   // add card to table on click for potential matching
   selectedCards.push(card);
   if(selectedCards.length == 2){
-
     setTimeout(() => {
       // Code to execute after TimeOut
       if(selectedCards[0].dataset.value == selectedCards[1].dataset.value){
@@ -60,6 +59,13 @@ function onCardClick(e){
         selectedCards[1].classList.add("matched");
         selectedCards[0].removeEventListner('click', onCardClick);
         selectedCards[1].removeEventListner('click', onCardClick);
+
+        const allCardsNotMatched = document.querySelectorAll('.card:not(.matched)');
+        console.log(allCardsNotMatched.length);
+        if(allCardsNotMatched.length == 0) {
+          // player wins
+          alert("Great job, you WIN!");
+        }
      }
      else {
        // wrong pick
