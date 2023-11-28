@@ -23,6 +23,7 @@ function createCard(cardUrl){
 
   card.appendChild(cardContent);
 
+  card.addEventListener('click', onCardClick);
   return card;
 }
 
@@ -40,6 +41,13 @@ function shuffleArray(arrayToshuffle){
   const arrayShuffled = arrayToshuffle.sort(() => 0.5 - Math.random());
   return arrayShuffled;
 }
+
+// Function to flip card on click
+function onCardClick(e){
+  const card = e.target.parentElement;
+  card.classList.add("flip");
+}
+
 
 let allCards = duplicateArray(cards);
 
