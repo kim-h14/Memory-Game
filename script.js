@@ -1,3 +1,4 @@
+// creation of board game with cards
 const cards = [
       'https://picsum.photos/id/237/100/100', 
       'https://picsum.photos/id/238/100/100',
@@ -33,9 +34,19 @@ function duplicateArray(arraySimple){
   return arrayDouble;
 }
 
-const allCards = duplicateArray(cards);
+// function to shuffle array
 
+function shuffleArray(arrayToshuffle){
+  const arrayShuffled = arrayToshuffle.sort(() => 0.5 - Math.random());
+  return arrayShuffled;
+}
+
+let allCards = duplicateArray(cards);
+
+// Shuffle array
+allCards = shuffleArray(allCards);
 allCards.forEach(card => {
-  const cardHtml = createCard(card);
-  gameBoard.appendChild(cardHtml);
+  const cardHtml =createCard(card);
+  gameBoard.appendChild(cardHtml);  
 })
+
